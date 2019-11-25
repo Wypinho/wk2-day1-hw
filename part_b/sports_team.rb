@@ -21,8 +21,21 @@ class SportsTeam
   #   return @coach_name
   # end
 
-  def set_coach_name(name)
-    @coach_name = name
+  # def set_coach_name(name)
+  #   @coach_name = name
+  # end
+
+  def add_player(name)
+    @players << name
+  end
+
+  def find_player(name)
+    for player in @players
+      if player == name
+        return true
+      end
+    end
+    return false
   end
 
 end
