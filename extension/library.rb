@@ -39,5 +39,14 @@ class Library
   def add_book(book_name)
     @books << {title: book_name, rental_details: {student_name: "", date: ""}}
   end
-  
+
+  def change_rental_details(book_name, student_name, date)
+    for book in @books
+      if book[:title] == book_name
+        book[:rental_details][:student_name] = student_name
+        book[:rental_details][:date] = date
+      end
+    end
+  end
+
 end
